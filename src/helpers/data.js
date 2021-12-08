@@ -22,44 +22,44 @@ export const TaskList ={todos: [
 ],
 projects:[
     {
-        name: "Laundary",
+        name: "project1",
         total: 2,
         completed: 1
     },
     {
-        name: "Do math homework",
+        name: "project2",
         total: 3,
         completed: 3
     },
     {
-        name: "Check stock market",
+        name: "project3",
         total: 1,
         completed: 1
     },
     {
-        name: "Meditate",
+        name: "project4",
         total: 4,
         completed: 0
     }
 ],
 history:[
     {
-        name: "Laundary",
+        name: "history1",
         total: 2,
         completed: 1
     },
     {
-        name: "Do math homework",
+        name: "history2",
         total: 3,
         completed: 3
     },
     {
-        name: "Check stock market",
+        name: "history3",
         total: 1,
         completed: 1
     },
     {
-        name: "Meditate",
+        name: "history4",
         total: 4,
         completed: 0
     }
