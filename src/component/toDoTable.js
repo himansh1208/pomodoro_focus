@@ -28,7 +28,7 @@ const ToDoTable = () => {
                     </ul>
                 </div>
             </div>
-            <div className="tab-content" style={{ marginLeft: "27%" }}>
+            <div className="tab-content" >
                 <div className="tab-pane active" id="todos1">
                     {
                         TaskList.todos.map((item) => {

@@ -1,7 +1,8 @@
 import React from 'react'
-import ToDoTable from "../../components/toDoTable"
-import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
+import ToDoTable from "../../component/toDoTable"
 import 'react-circular-progressbar/dist/styles.css';
+import AboutUs from '../../component/AboutUs'
+import TabBox from '../../component/TabBox'
 
 const Home = (props) => {
   return (
@@ -9,7 +10,15 @@ const Home = (props) => {
       <div className="container-fluid p-0">
         <div className="timer-sec pomo-bg">
           <div className="tabbable-responsive tabbable-position">
+            <div className="container-fluid p-5">
+              <div className="timer-sec pomo-bg">
+                <div className="tabbable-responsive tabbable-position">
+                  <TabBox />
+                </div>
+              </div>
+            </div>
           </div>
+
           <div className="tab-content">
             <div className="tab-pane active" id="pomodoro">
               <div className="d-md-flex d-block align-items-center justify-content-center main-width">
@@ -18,16 +27,27 @@ const Home = (props) => {
                   <div className="row flex-wrap-no mx-0">
                     <div className="col text-center d-flex justify-content-center">
                       <div className="round-skills">
-                        <CircularProgressbar
-                          value={60}
-                          text={`18:55`}
-                          styles={buildStyles({
-                            textColor: "#02044a",
-                            pathColor: "#02044a",
-                          })
-                          }
-                          strokeWidth={4}
-                        />
+                        <div class="row flex-wrap-no mx-0">
+                          <div class="col text-center d-flex justify-content-center">
+                            <div class="round-skills">
+                              <div class="progress blue">
+                                <span class="progress-left">
+                                  <span class="progress-bar"></span>
+                                </span>
+                                <span class="progress-right">
+                                  <span class="progress-bar"></span>
+                                </span>
+                                <div class="progress-value">
+                                  <div class="">
+                                    <span>18:55</span>
+                                    <p>WORKING ON</p>
+                                    <strong>Laundry</strong>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -38,14 +58,17 @@ const Home = (props) => {
                 </div>
               </div>
 
-              
+
               <ToDoTable />
-              
+
             </div>
 
           </div>
         </div>
       </div>
+
+
+      <AboutUs />
     </div>
   )
 }
