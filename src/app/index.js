@@ -14,7 +14,6 @@ const App = () => {
         <Route exact path="/home/secondary" element={<Home color={"green"} />} />
         <Route path="/" element={<Navigate to ="/home/primary" />}/>
       </Routes>
-      
       <Footer />
     </>
   );

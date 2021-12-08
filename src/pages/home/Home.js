@@ -2,6 +2,8 @@ import React from 'react'
 import ToDoTable from "../../components/toDoTable"
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
+import AboutUs from '../../component/AboutUs'
+import TabBox from '../../component/TabBox'
 
 const Home = (props) => {
   return (
@@ -10,10 +12,18 @@ const Home = (props) => {
         <div className="timer-sec pomo-bg">
           <div className="tabbable-responsive tabbable-position">
           </div>
+          
           <div className="tab-content">
             <div className="tab-pane active" id="pomodoro">
               <div className="d-md-flex d-block align-items-center justify-content-center main-width">
 
+              <div className="container-fluid p-0">
+              <div className="timer-sec pomo-bg">
+                 <div className="tabbable-responsive tabbable-position">
+                    <TabBox />
+                </div>
+             </div>
+              </div>
                 <div className="skills_box">
                   <div className="row flex-wrap-no mx-0">
                     <div className="col text-center d-flex justify-content-center">
@@ -46,7 +56,10 @@ const Home = (props) => {
           </div>
         </div>
       </div>
+    
+      <AboutUs />
     </div>
+  
   )
 }
 
