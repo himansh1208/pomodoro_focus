@@ -337,6 +337,7 @@ a:hover {
 .todo-box.active {
   border-left: 6px solid #02044a;
 }
+
 .todo-box .container {
   position: absolute;
 }

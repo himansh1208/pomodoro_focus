@@ -2,17 +2,17 @@ import React from 'react'
 import logoIcon from "../assets/Images/logo-icon.png"
 import logo from "../assets/Images/logo.png"
 import { Link } from "react-router-dom";
-const Header = () => {
+const Header = ({color}) => {
   return (
     <div>
-     <header className="header_sec" id="navbar_top">
+     <header className="header_sec" style={{backgroundColor:color}} id="navbar_top">
       <div className="container">
       
         <nav className="navbar navbar-expand-md p-0">
-          <a className="navbar-brand" >
-            <img src={logoIcon} />
-            <img src={logo} />
-          </a>
+          <Link className="navbar-brand" to="" >
+            <img src={logoIcon} alt="logoIcon" />
+            <img src={logo} alt="logo" />
+          </Link>
           <button
             className="navbar-toggler navbar-dark"
             type="button"
