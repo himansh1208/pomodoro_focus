@@ -573,7 +573,7 @@ a:hover {
     padding: 24px 0px 60px 0px
   }
   .nav-tabs {
-    height: 57px;
+    height: auto;
     padding: 0;
   }
   .nav-tabs .nav-item {

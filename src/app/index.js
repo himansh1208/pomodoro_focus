@@ -3,23 +3,34 @@ import Header from "./Header";
 import Footer from "./Footer";
 import { Routes, Route, Navigate } from "react-router-dom";
 import Home from "./../pages/home";
-import './../assets/css/bootstrap.min.css'
-import './../assets/css/style.css'
+import "./../assets/css/bootstrap.min.css";
+import "./../assets/css/style.css";
 import { useLocation } from "react-router";
 
 const App = () => {
-  const {pathname} =useLocation()
-  
-console.log("uselocation:",pathname)
+  const { pathname } = useLocation();
+
+  const getColor = () => {
+    if (pathname === "/home/primary") {
+      return "#02044a";
+    } else {
+      return "#024A46";
+    }
+  };
+
   return (
     <>
-      <Header color={pathname==="/home/primary" ? "#02044a":"#024A46"}/>
+      <Header color={getColor()} />
       <Routes>
-        <Route path="/home/primary" element={<Home color={"#02044a"} />} />
-        <Route exact path="/home/secondary" element={<Home color={"#024A46"} />} />
+        <Route path="/home/primary" element={<Home color={getColor()} />} />
+        <Route
+          exact
+          path="/home/secondary"
+          element={<Home color={getColor()} />}
+        />
         <Route path="/" element={<Navigate to="/home/primary" />} />
       </Routes>
-      <Footer color={pathname=="/home/primary"?"#02044a":"#024A46"}/>
+      <Footer color={getColor()} />
     </>
   );
 };
