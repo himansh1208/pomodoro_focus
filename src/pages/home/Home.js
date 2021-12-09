@@ -35,11 +35,12 @@ const Home = ({color}) => {
                                 <span className="progress-left" >
                                   <span className="progress-bar" ></span>
                                 </span>
-                                <span className="progress-right" style={{backgroundColor:color}}>
+                                <span className="progress-right">
                                   <span 
-                                  // className="progress-bar"
+                                  className={ `progress-bar ${color=="#024A46"?"progress-bar-green":""}`}
                                   
-                                  style={{backgroundColor:color}}></span>
+                                  
+                                  ></span>
                                 </span>
                                 <div className="progress-value" style={{color:color}}>
                                   <div className="">

@@ -5,18 +5,18 @@ const TabBox = ({color}) => {
   return (
     <div className="tabbable">
       <ul className="nav nav-tabs" id="myTab" role="tablist">
-        <li className="nav-item">
-          <Link to="" style={{color:color}} className="nav-link active" data-toggle="tab">
+        <li className="nav-item ">
+          <Link to="" style={{color:color}} className="nav-link active  " data-toggle="tab">
             Pomodoro
           </Link>
         </li>
         <li className="nav-item">
-          <Link to="" style={{color:color}}  className="nav-link" data-toggle="tab">
+          <Link to="" style={{color:color}}  className="nav-link " data-toggle="tab">
             Short Break
           </Link>
         </li>
         <li className="nav-item">
-          <Link to="" style={{color:color}} className="nav-link" data-toggle="tab">
+          <Link to="" style={{color:color}} className="nav-link " data-toggle="tab">
             Long Break
           </Link>
         </li>

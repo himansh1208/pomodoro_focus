@@ -135,12 +135,19 @@ a:hover {
   opacity: 1;
   border: unset;
 }
-.nav-tabs .nav-link.active:before {
+.nav-tabs .nav-link.active:before  {
   content: "";
   position: absolute;
   bottom: 0;
   width: 24px;
   border-bottom: 3px solid #02044a;
+}
+.nav-tabs .nav-link.active:before .green {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 24px;
+  border-bottom: 3px solid #024A46;
 }
 .progress {
   width: 270px;
@@ -254,6 +261,10 @@ a:hover {
 
 .progress.blue .progress-bar {
   border-color: #02044a;
+}
+
+.progress.blue .progress-bar-green {
+  border-color: #024A46;
 }
 
 .progress.blue .progress-left .progress-bar {
@@ -452,6 +463,9 @@ a:hover {
 /* When the checkbox is checked, add a blue background */
 .checkbox-main input:checked ~ .checkmark {
   background-color: #02044a;
+}
+.checkbox-main input:checked ~ .checkmark-green {
+  background-color: #024A46;
 }
 .checkbox-main input[type="checkbox"] + span + h6 {
   margin: 0 0 0 10px;

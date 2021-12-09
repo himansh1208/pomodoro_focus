@@ -5,7 +5,8 @@ import { Link } from "react-router-dom";
 const ToDoTable = ({color}) => {
 
 const [flag,setflag] =useState("Todos")
-
+const [activeflag,setActiveflag]=useState(0)
+console.log("activeflag",activeflag)
     return (<>
 
         <div >
@@ -34,11 +35,14 @@ const [flag,setflag] =useState("Todos")
                 <div className="tab-pane active"  id="todos1">
                     {
                         (flag=="Todos"?TaskList.todos:flag=="Projects"?TaskList.projects:TaskList.history).map((item,index) => {
-                            return <div className="row align-items-center todo-box " style={{color:color,borderLeft:`6px solid ${color}`}} >
+                            return <div className="row align-items-center todo-box  "
+                             style={{color:color,borderLeft:`${index===0?`6px solid ${color}`:""}`}}
+                            
+                              >
                                 <div className="col-md-9 col-sm-9 col-9" >
                                     <label className="checkbox-main d-flex align-items-center">
-                                        <input name={item.index} type="checkbox" style={{color}} />
-                                        <span className="checkmark"  ></span>
+                                        <input name={index} type="checkbox" style={{color}} onClick={()=>{setActiveflag(index)}} />
+                                        <span className={`checkmark ${color=="#024A46"?"checkmark-green":""}`}  ></span>
                                         <h6>{item.name}</h6>
                                     </label>
                                 </div>
