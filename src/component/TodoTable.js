@@ -46,11 +46,13 @@ const TodoTable = ({ color }) => {
   };
 
   const handleNumberChange = (e) => {
-    //debugger
     if (e.target.value > 0) {
       setFormValues({ ...formValues, total: Math.abs(e.target.value) });
       setNumErr("");
-    } else {
+    } else if(e.target.value === "") {
+      setNumErr("");
+    }
+    else{
       setNumErr("Please Enter a valid number !");
     }
   };
