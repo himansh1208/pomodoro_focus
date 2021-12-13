@@ -11,19 +11,21 @@ const TodoTable = ({ color }) => {
   const [modal, setModal] = useState(false);
   const [formValues, setFormValues] = useState({
     name: "",
-    total: 0,
+    total: "",
     completed: 0,
   });
   const [numErr, setNumErr] = useState("");
+  const [nameErr, setNameErr] = useState("");
   const dispatch = useDispatch();
 
   useEffect(() => {
     setFormValues({
       name: "",
-      total: null,
+      total: "",
       completed: 0,
     });
     setNumErr("");
+    setNameErr("");
   }, [modal]);
 
   useEffect(() => {
@@ -45,14 +47,18 @@ const TodoTable = ({ color }) => {
     },
   };
 
+  const handleNameChange = (e) => {
+    setNameErr("");
+    setFormValues({ ...formValues, name: e.target.value });
+  };
+
   const handleNumberChange = (e) => {
     if (e.target.value > 0) {
       setFormValues({ ...formValues, total: Math.abs(e.target.value) });
       setNumErr("");
-    } else if(e.target.value === "") {
+    } else if (e.target.value === "") {
       setNumErr("");
-    }
-    else{
+    } else {
       setNumErr("Please Enter a valid number !");
     }
   };
@@ -60,13 +66,23 @@ const TodoTable = ({ color }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     let temp = formValues;
-    TaskList.push(temp);
-    setModal(false);
-    setFormValues({
-      name: "",
-      total: null,
-      completed: 0,
+    let taskName = true;
+    TaskList.map((item) => {
+      if (item.name === temp.name) {
+        setNameErr(`! ${flag} with this name already exists.`);
+        taskName = false;
+      }
     });
+    if (taskName === true) {
+      TaskList.push(temp);
+      setModal(false);
+      setFormValues({
+        name: "",
+        total: "",
+        completed: 0,
+      });
+      setNameErr("");
+    }
   };
 
   return (
@@ -145,6 +161,7 @@ const TodoTable = ({ color }) => {
             isOpen={modal}
             onRequestClose={() => setModal(false)}
             style={customStyles}
+            ariaHideApp={false}
           >
             <form onSubmit={(e) => handleSubmit(e)}>
               <h1 className="modal-title" style={{ color }}>
@@ -156,12 +173,13 @@ const TodoTable = ({ color }) => {
                   type="text"
                   className="input mb-3"
                   placeholder="Task Name"
-                  onChange={(e) =>
-                    setFormValues({ ...formValues, name: e.target.value })
-                  }
+                  onChange={(e) => handleNameChange(e)}
                   value={formValues.name}
                   required
                 />
+                <div className="d-flex justify-content-center mb-3">
+                  <span style={{ color: "red" }}>{nameErr}</span>
+                </div>
               </div>
               <div>
                 <input
