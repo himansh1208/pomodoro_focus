@@ -27,7 +27,7 @@ body:before{
   content: ' ';
     position: absolute;
     left: 0;
-    top: calc(50% - 325px);
+    top: calc(50% - 365px);
     width: 100%;
     height: 710px;
     z-index: -1;
@@ -40,9 +40,9 @@ body:after{
   top: 60%;
   width: 100%;
   height: 0;
-  border-bottom: 200px solid #F7F7FA;
-  border-left: 625px solid transparent;
-  border-right: 625px solid transparent;
+  border-bottom: 147px solid #F7F7FA;
+  border-left: 700px solid transparent;
+  border-right: 700px solid transparent;
   z-index: 0 !important;
 }
 a:hover {
